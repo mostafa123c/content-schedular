@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "684e1fe2-0099-4a56-b70e-5bb5f11b75a3",
+		"name": "Content Schedular Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22684210"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}api/v1/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "6|QPuuhQGi4SABKARLXGT2CRWKIjYnQDykp2tVjbwEc5da2a7f"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{host}}api/v1/refresh"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mostafa emad",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "new@gmail.com",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}api/v1/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "21|ODkR4XnbnyQMj8sjCccqNhpXdOEJ2OA46QLGtctP1a65c18d"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{host}}api/v1/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "26|hZRALwdKvVwdUUBlFAYtpXJftDZR96QNO4SE8PIw18e6e05e"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "mostafa emad u",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mostafaupd@gmail.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{host}}api/v1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "22|ZHpnmsi55WOwfILotvYITuGFsrZa9OITlEpnJchXc1b90557"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "current_password",
+									"value": "passwordd",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"description": "required , matches password",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}api/v1/profile/password"
+					},
+					"response": []
+				},
+				{
+					"name": "Show Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}api/v1/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}api/v1/posts?status=1&sort_key=created_at&sort_type=asc&start_date=2025-05-21&end_date=2025-05-25",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"v1",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "sort_key",
+									"value": "created_at",
+									"description": "scheduled_time , created_at"
+								},
+								{
+									"key": "sort_type",
+									"value": "asc",
+									"description": "asc , desc"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-05-21"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-05-25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Auth User Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}api/v1/user/posts?status=2&sort_key=created_at&sort_type=desc&start_date=2025-05-24&end_date=2025-05-25&search=google",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"v1",
+								"user",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "2",
+									"description": "0 : draft , 1 : scheduled , 2 : published"
+								},
+								{
+									"key": "sort_key",
+									"value": "created_at",
+									"description": "scheduled_time , created_at"
+								},
+								{
+									"key": "sort_type",
+									"value": "desc",
+									"description": "asc , desc"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-05-24",
+									"description": "created_at"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-05-25",
+									"description": "created_at"
+								},
+								{
+									"key": "search",
+									"value": "google",
+									"description": "content and title"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}api/v1/posts/39"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "https://www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "scheduled_time",
+									"value": "2025-05-25T22:59:00",
+									"description": "after now ",
+									"type": "text"
+								},
+								{
+									"key": "platforms[]",
+									"value": "1",
+									"description": "array",
+									"type": "text"
+								},
+								{
+									"key": "platforms[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "in : 0 -> draft , 1 -> scheduled ",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"description": "optional ",
+									"type": "file",
+									"src": "/C:/Users/mostafa emad/Pictures/Screenshots/Screenshot 2023-03-01 180805.png"
+								}
+							]
+						},
+						"url": "{{host}}api/v1/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Repost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{host}}api/v1/posts/7/repost"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new one upd 2",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "new test post upd 2",
+									"type": "text"
+								},
+								{
+									"key": "scheduled_time",
+									"value": "2025-05-26T23:03:00",
+									"description": "after now ",
+									"type": "text"
+								},
+								{
+									"key": "platforms[]",
+									"value": "1",
+									"description": "array",
+									"type": "text"
+								},
+								{
+									"key": "platforms[1]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "in : 0 -> draft , 1 -> scheduled ",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"description": "optional",
+									"type": "file",
+									"src": "/C:/Users/mostafa emad/Pictures/Screenshots/Screenshot 2023-03-03 134010.png"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}api/v1/posts/7"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{host}}api/v1/posts/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Platform",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}api/v1/platforms"
+					},
+					"response": []
+				},
+				{
+					"name": "User Platforms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "60|iRxNzDGlBbgBwoBE03kQz2fPg4oN7fgX2bjhoDBo23f0ee19"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}api/v1/user/platforms"
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle user Platform",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{host}}api/v1/platforms/1/toggle"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Platform Settings",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settings\":{\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}api/v1/platforms/1/settings"
+					},
+					"response": []
+				},
+				{
+					"name": "get platform settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}api/v1/platforms/2/settings"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activity Logs",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}api/v1/activity-logs?action=platform_toggled&sort_key=created_at&sort_type=desc&start_date=2025-05-24&end_date=2025-05-26",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"v1",
+								"activity-logs"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "platform_toggled"
+								},
+								{
+									"key": "sort_key",
+									"value": "created_at"
+								},
+								{
+									"key": "sort_type",
+									"value": "desc"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-05-24"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-05-26"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Types Of Logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}api/v1/user/activity-logs/types"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}api/v1/activity-logs",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"v1",
+								"activity-logs"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "platform_toggled",
+									"disabled": true
+								},
+								{
+									"key": "sort_key",
+									"value": "created_at",
+									"disabled": true
+								},
+								{
+									"key": "sort_type",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2025-05-24",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2025-05-26",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "61|3wkQTqUcVcKSxX56kA9sVxZGBoVtdGtpOQY1iyCp567d78ed"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
