@@ -158,9 +158,9 @@ The application supports multiple social platforms (Twitter, Instagram, LinkedIn
 
     or you can test the scheduler manually by scheduling a post (after 1 minute for examole) and run the queue
 
-    - Start the Schedular:
+    - And Start the Schedular that will run the command that process due-posts every minute:
         ```bash
-        php artisan schedule:runspan
+        php artisan schedule:run
         ```
 
 ---
@@ -331,6 +331,3 @@ The analytics page provides insights into your posting activity, including post 
 
 ![Activity Logs](repo_Images/activity_logs.png)
 
-```bash
-	php artisan schedule:run
-```
