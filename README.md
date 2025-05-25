@@ -125,7 +125,15 @@ The application supports multiple social platforms (Twitter, Instagram, LinkedIn
     php artisan storage:link
     ```
 
-5. **Queue & Scheduler**
+5. **Start the development server**
+
+    ```bash
+    php artisan serve
+    ```
+
+6. Access the application at `http://localhost:8000`
+
+7. **Queue & Scheduler**
 
     - In `.env`:
 
