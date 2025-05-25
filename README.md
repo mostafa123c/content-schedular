@@ -317,7 +317,7 @@ The analytics page provides insights into your posting activity, including post 
 
 ![Platform and Settings](repo_Images/platforms.png)
 
-![Platform and Settings](https://file+.vscode-resource.vscode-cdn.net/e%3A/laravel/proj/content-schedular-task/repo_Images/platform_settings.png)
+![Platform and Settings](repo_Images/platforms.png)
 
 ### Activity Logs
 
