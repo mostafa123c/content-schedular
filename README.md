@@ -325,7 +325,7 @@ The analytics page provides insights into your posting activity, including post 
 
 ![Platform and Settings](repo_Images/platforms.png)
 
-![Platform and Settings](repo_Images/platforms.png)
+![Platform and Settings](repo_Images/platform_settings.png)
 
 ### Activity Logs
 
