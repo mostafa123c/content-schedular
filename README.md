@@ -263,7 +263,7 @@ Duplicate any post as a draft for quick rescheduling or editing. Use the `POST /
 -   **Run all tests:** `php artisan test`
 -   **Model Factories:** For all entities in `database/factories` for testing purposes
 -   **Seeders:** For platforms data in `database/seeders` for platforms & settings seeding
--   **Postman Collectioction:** Added postman collection for Api endpoints test (Content Schedular Task.postman_collection.json)
+-   **Postman Collection:** Added postman collection for Api endpoints test (Content Schedular Task.postman_collection.json)
 -   **Manual Publishing Test:**
     1. Schedule a post for 1 minute in the future.
     2. Ensure the queue worker is running: `php artisan queue:work`
