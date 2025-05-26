@@ -282,7 +282,7 @@ Duplicate any post as a draft for quick rescheduling or editing. Use the `POST /
 ## Security &amp; Extensibility
 
 -   CSRF, XSS, SQL injection protection
--   Rate limiting at API and service layer
+-   Rate limiting at Create Post & Repost API's and service layer
 -   Easily add new platforms by implementing a publishing service and updating the factory (factory design pattern is used for platform extensibility)
 
 ---
